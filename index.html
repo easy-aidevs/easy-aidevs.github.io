@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>aidevs — Apps built with AI</title>
+  <meta name="description" content="Independent developer building focused, privacy-first productivity apps with AI. 用 AI 构建专注、隐私优先的效率工具。" />
+  <meta property="og:title" content="aidevs" />
+  <meta property="og:description" content="Apps built with intention." />
+  <meta property="og:url" content="https://aidevs.cn" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <link rel="icon" href="/img/catchtime-icon.png" type="image/png" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <script>
+    (function(){const t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();
+  </script>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a class="nav-logo" href="/">ai<span class="logo-accent">devs</span></a>
+    <ul class="nav-links">
+      <li><a href="#apps" class="lang-zh">应用</a><a href="#apps" class="lang-en">Apps</a></li>
+      <li><a href="#about" class="lang-zh">关于</a><a href="#about" class="lang-en">About</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn-lang" id="btnLang" aria-label="Toggle language">EN</button>
+      <button class="btn-theme" id="btnTheme" aria-label="Toggle theme">☀</button>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-eyebrow lang-zh">独立开发者 · AI 驱动</div>
+    <div class="hero-eyebrow lang-en">Independent Developer · AI-Powered</div>
+    <h1 class="lang-zh">用心打造的<em>效率工具</em></h1>
+    <h1 class="lang-en">Tools built with<br><em>intention</em></h1>
+    <p class="hero-sub lang-zh">专注隐私、本地优先、跨平台的移动应用。每一个应用都由 AI 协作开发，但每一个设计决策都经过深思熟虑。</p>
+    <p class="hero-sub lang-en">Privacy-first, local-first, cross-platform mobile apps. Built with AI, designed with care.</p>
+  </div>
+</section>
+
+<section class="section" id="apps">
+  <div class="container">
+    <div class="section-label lang-zh">我的应用</div>
+    <div class="section-label lang-en">My Apps</div>
+    <div class="apps-grid">
+      <a class="app-card" href="/catchtime/">
+        <div class="app-card-header">
+          <div class="app-icon-ring"></div>
+          <div>
+            <div class="app-name">CatchTime</div>
+            <div class="app-tagline lang-zh">时间环 · 时间分段管理</div>
+            <div class="app-tagline lang-en">Time-segment planner</div>
+          </div>
+        </div>
+        <p class="app-desc lang-zh">将一天分割成多个任务阶段，以环形视觉直观追踪当前所处阶段。无需手动计时，根据系统时间自动判断进度。</p>
+        <p class="app-desc lang-en">Split your day into time segments and track your current phase with a ring view. Progress is calculated automatically from system time — no manual timer needed.</p>
+        <div class="app-footer">
+          <span class="pill">📱 iOS</span>
+          <span class="pill">🤖 Android</span>
+        </div>
+      </a>
+      <div class="app-card" style="opacity:0.4; pointer-events:none; border-style:dashed;">
+        <div class="app-card-header">
+          <div style="width:64px;height:64px;border-radius:16px;border:2px dashed var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <span style="font-size:22px;">+</span>
+          </div>
+          <div>
+            <div class="app-name lang-zh">即将推出</div>
+            <div class="app-name lang-en">Coming Soon</div>
+            <div class="app-tagline lang-zh">更多应用正在开发中</div>
+            <div class="app-tagline lang-en">More apps in development</div>
+          </div>
+        </div>
+        <p class="app-desc lang-zh">下一个应用正在 AI 协作开发中……</p>
+        <p class="app-desc lang-en">Next app is being built with AI collaboration…</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section class="section" id="about">
+  <div class="container" style="max-width:640px;">
+    <div class="section-label lang-zh">关于</div>
+    <div class="section-label lang-en">About</div>
+    <p style="font-size:16px;color:var(--text-2);line-height:1.8;" class="lang-zh">
+      我是一名独立开发者，借助 AI 工具从零构建实用的移动端应用。
+      我相信好的工具应该安静、专注、尊重用户数据——不收集行为、不推送焦虑、不依赖网络。
+      每一款应用都保持小而精，做好一件事。
+    </p>
+    <p style="font-size:16px;color:var(--text-2);line-height:1.8;" class="lang-en">
+      I'm an independent developer building practical mobile apps from scratch using AI tools.
+      I believe good tools should be calm, focused, and respectful of user data —
+      no behavior tracking, no anxiety-inducing design, no forced connectivity.
+      Each app stays small and does one thing well.
+    </p>
+    <p style="margin-top:20px;font-size:14px;color:var(--text-3);">
+      <a href="mailto:ai-devs@outlook.com">ai-devs@outlook.com</a>
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <span class="footer-copy lang-zh">© 2026 aidevs.cn · 独立开发者</span>
+    <span class="footer-copy lang-en">© 2026 aidevs.cn · Independent Developer</span>
+    <div class="footer-links">
+      <a href="/catchtime/" class="lang-zh">时间环</a>
+      <a href="/catchtime/" class="lang-en">CatchTime</a>
+      <a href="/catchtime/privacy.html" class="lang-zh">隐私政策</a>
+      <a href="/catchtime/privacy.html" class="lang-en">Privacy</a>
+      <a href="/catchtime/terms.html" class="lang-zh">用户协议</a>
+      <a href="/catchtime/terms.html" class="lang-en">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+</body>
+</html>
