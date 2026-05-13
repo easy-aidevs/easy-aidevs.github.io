@@ -6,44 +6,46 @@
 
 // ── Language + Theme controls ───────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', function () {
-  const savedLang = localStorage.getItem('lang') ||
-    (navigator.language.startsWith('zh') ? 'zh' : 'en');
-  setLang(savedLang);
+  // Apply saved / detected language (i18n.js must be loaded first)
+  applyLang(getLang());
 
-  const btnLang = document.getElementById('btnLang');
-  if (btnLang) btnLang.addEventListener('click', function () {
-    const next = document.body.classList.contains('lang-zh') ? 'en' : 'zh';
-    setLang(next);
-  });
-
+  // Theme toggle
   const btnTheme = document.getElementById('btnTheme');
   if (btnTheme) btnTheme.addEventListener('click', function () {
     const current = document.documentElement.getAttribute('data-theme') || 'dark';
     setTheme(current === 'dark' ? 'light' : 'dark');
   });
 
-  updateBtns();
-});
+  // Language dropdown toggle
+  const btnLang = document.getElementById('btnLang');
+  const dropdown = document.getElementById('langDropdown');
+  if (btnLang && dropdown) {
+    btnLang.addEventListener('click', function (e) {
+      e.stopPropagation();
+      dropdown.classList.toggle('open');
+    });
+    dropdown.querySelectorAll('[data-lang]').forEach(function (item) {
+      item.addEventListener('click', function () {
+        applyLang(item.dataset.lang);
+        dropdown.classList.remove('open');
+      });
+    });
+    document.addEventListener('click', function () {
+      dropdown.classList.remove('open');
+    });
+  }
 
-function setLang(lang) {
-  document.body.classList.remove('lang-zh', 'lang-en');
-  document.body.classList.add('lang-' + lang);
-  localStorage.setItem('lang', lang);
-  updateBtns();
-}
+  updateThemeBtn();
+});
 
 function setTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
   localStorage.setItem('theme', theme);
-  updateBtns();
+  updateThemeBtn();
 }
 
-function updateBtns() {
-  const btnLang = document.getElementById('btnLang');
+function updateThemeBtn() {
   const btnTheme = document.getElementById('btnTheme');
-  if (btnLang) {
-    btnLang.textContent = document.body.classList.contains('lang-zh') ? 'EN' : '中文';
-  }
   if (btnTheme) {
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
     btnTheme.textContent = isDark ? '☀' : '☽';

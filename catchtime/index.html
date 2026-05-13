@@ -4,16 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CatchTime · 时间环 — aidevs</title>
-  <meta name="description" content="CatchTime — 将任意时段划分为阶段计划，依据设备时钟自动标记当前所处阶段，无需启动计时器。环形视图直观呈现整体进度与当前位置。iOS & Android。" />
+  <meta name="description" content="CatchTime — 将任意时段划分为阶段计划，依据设备时钟自动标记当前所处阶段，无需启动计时器。iOS & Android。" />
   <meta property="og:title" content="CatchTime · 时间环" />
-  <meta property="og:description" content="Time-segment planner with ring view. No manual timer. iOS & Android." />
+  <meta property="og:image" content="/img/catchtime-icon.png" />
   <meta property="og:url" content="https://aidevs.cn/catchtime/" />
   <meta name="theme-color" content="#0a0a0a" />
   <link rel="icon" href="/img/catchtime-icon.png" type="image/png" />
   <link rel="stylesheet" href="/css/style.css" />
-  <script>
-    (function(){const t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();
-  </script>
+  <script>(function(){const t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
 </head>
 <body>
 
@@ -21,13 +19,26 @@
   <div class="container nav-inner">
     <a class="nav-logo" href="/">ai<span class="logo-accent">devs</span></a>
     <ul class="nav-links">
-      <li><a href="/#apps" class="lang-zh">全部应用</a><a href="/#apps" class="lang-en">All Apps</a></li>
-      <li><a href="#features" class="lang-zh">功能</a><a href="#features" class="lang-en">Features</a></li>
-      <li><a href="privacy.html" class="lang-zh">隐私政策</a><a href="privacy.html" class="lang-en">Privacy</a></li>
-      <li><a href="terms.html" class="lang-zh">用户协议</a><a href="terms.html" class="lang-en">Terms</a></li>
+      <li><a href="/#apps" data-i18n="nav_apps">全部应用</a></li>
+      <li><a href="#features" data-i18n="nav_features">功能</a></li>
+      <li><a href="privacy.html" data-i18n="nav_privacy">隐私政策</a></li>
+      <li><a href="terms.html" data-i18n="nav_terms">用户协议</a></li>
     </ul>
     <div class="nav-actions">
-      <button class="btn-lang" id="btnLang" aria-label="Toggle language">EN</button>
+      <div class="lang-selector">
+        <button class="btn-lang" id="btnLang" aria-label="切换语言">简体中文</button>
+        <div class="lang-dropdown" id="langDropdown">
+          <button data-lang="zh-CN">简体中文</button>
+          <button data-lang="zh-TW">繁體中文</button>
+          <button data-lang="en">English</button>
+          <button data-lang="ja">日本語</button>
+          <button data-lang="ko">한국어</button>
+          <button data-lang="fr">Français</button>
+          <button data-lang="de">Deutsch</button>
+          <button data-lang="es">Español</button>
+          <button data-lang="pt-BR">Português</button>
+        </div>
+      </div>
       <button class="btn-theme" id="btnTheme" aria-label="Toggle theme">☀</button>
     </div>
   </div>
@@ -35,25 +46,18 @@
 
 <section class="app-detail-hero">
   <div class="container">
-    <a class="back-link" href="/">
-      ← <span class="lang-zh">所有应用</span><span class="lang-en">All Apps</span>
-    </a>
+    <a class="back-link" href="/">← <span data-i18n="back_all">所有应用</span></a>
     <div class="app-detail-inner">
-      <div class="app-detail-icon-placeholder" aria-hidden="true"></div>
+      <img src="/img/catchtime-icon.png" alt="CatchTime" class="app-detail-icon" />
       <div class="app-detail-text">
-        <h1>CatchTime <span class="lang-zh" style="font-weight:400;color:var(--text-2);">· 时间环</span></h1>
-        <p class="sub lang-zh">把一段时间划分成若干阶段，CatchTime 依据当前时钟自动告诉你现在处于哪个阶段——无需启动计时器，无需手动切换。环形视图让你随时看清整体节奏与当前位置。</p>
-        <p class="sub lang-en">Divide any time window into phases and CatchTime shows which one you're in right now — driven entirely by your device clock, with no timer to start or stop. The ring view keeps the full schedule visible at a glance.</p>
+        <h1>CatchTime <span style="font-weight:400;color:var(--text-2);">· 时间环</span></h1>
+        <p class="sub" data-i18n="hero_desc">把一段时间划分成若干阶段，CatchTime 依据当前时钟自动告诉你现在处于哪个阶段——无需启动计时器，无需手动切换。环形视图让你随时看清整体节奏与当前位置。</p>
         <div class="app-detail-actions">
           <a class="dl-badge dl-badge-soon" href="#" aria-disabled="true">
-            <span>🍎</span>
-            <span class="lang-zh">App Store 即将上线</span>
-            <span class="lang-en">App Store — Coming Soon</span>
+            <span data-i18n="badge_ios">🍎  App Store 即将上线</span>
           </a>
           <a class="dl-badge dl-badge-soon" href="#" aria-disabled="true">
-            <span>🤖</span>
-            <span class="lang-zh">Google Play 即将上线</span>
-            <span class="lang-en">Google Play — Coming Soon</span>
+            <span data-i18n="badge_droid">🤖  Google Play 即将上线</span>
           </a>
         </div>
       </div>
@@ -65,50 +69,37 @@
 
 <section class="section" id="features">
   <div class="container">
-    <div class="section-label lang-zh">核心功能</div>
-    <div class="section-label lang-en">Features</div>
+    <div class="section-label" data-i18n="feat_label">核心功能</div>
     <div class="features-grid">
       <div class="feature-card">
         <div class="feature-icon">⏱</div>
-        <div class="feature-title lang-zh">自动推进</div>
-        <div class="feature-title lang-en">Auto-Advance</div>
-        <p class="feature-desc lang-zh">基于系统时间自动判断当前任务阶段，无需按下任何“开始”按鈗。</p>
-        <p class="feature-desc lang-en">Automatically determines your current task phase from system time. No "Start" button needed.</p>
+        <div class="feature-title" data-i18n="feat1_title">自动推进</div>
+        <p class="feature-desc" data-i18n="feat1_desc">基于系统时间自动判断当前任务阶段，无需按下任何"开始"按钮。</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">⭕</div>
-        <div class="feature-title lang-zh">环形视图</div>
-        <div class="feature-title lang-en">Ring View</div>
-        <p class="feature-desc lang-zh">每个任务分段以彩色弧段呼现，当前进度一目了然。</p>
-        <p class="feature-desc lang-en">Each task segment is displayed as a colored arc. Your current position is instantly visible.</p>
+        <div class="feature-title" data-i18n="feat2_title">环形视图</div>
+        <p class="feature-desc" data-i18n="feat2_desc">每个任务分段以彩色弧段呈现，当前进度一目了然。</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">📋</div>
-        <div class="feature-title lang-zh">多计划管理</div>
-        <div class="feature-title lang-en">Multiple Plans</div>
-        <p class="feature-desc lang-zh">创建多个计划，适配工作日、周末或不同场景的时间安排。</p>
-        <p class="feature-desc lang-en">Create multiple plans for different days or scenarios — workdays, weekends, or custom routines.</p>
+        <div class="feature-title" data-i18n="feat3_title">多计划管理</div>
+        <p class="feature-desc" data-i18n="feat3_desc">创建多个计划，适配工作日、周末或不同场景的时间安排。</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">✅</div>
-        <div class="feature-title lang-zh">手动完成</div>
-        <div class="feature-title lang-en">Manual Complete</div>
-        <p class="feature-desc lang-zh">提前完成任务时可手动标记，支持撤销上一次完成操作。</p>
-        <p class="feature-desc lang-en">Mark tasks as done early. Undo your last completion at any time.</p>
+        <div class="feature-title" data-i18n="feat4_title">手动完成</div>
+        <p class="feature-desc" data-i18n="feat4_desc">提前完成任务时可手动标记，支持撤销上一次完成操作。</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">🔒</div>
-        <div class="feature-title lang-zh">本地优先</div>
-        <div class="feature-title lang-en">Local-First</div>
-        <p class="feature-desc lang-zh">所有数据存储在设备本地，无需网络，无账号，无数据上传。</p>
-        <p class="feature-desc lang-en">All data stays on your device. No account, no network required, no data uploaded.</p>
+        <div class="feature-title" data-i18n="feat5_title">本地优先</div>
+        <p class="feature-desc" data-i18n="feat5_desc">所有数据存储在设备本地，无需网络，无账号，无数据上传。</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">📱</div>
-        <div class="feature-title lang-zh">跨平台</div>
-        <div class="feature-title lang-en">Cross-Platform</div>
-        <p class="feature-desc lang-zh">iOS 与 Android 双端同步开发，界面体验保持高度一致。</p>
-        <p class="feature-desc lang-en">Built for both iOS and Android with a consistent experience across platforms.</p>
+        <div class="feature-title" data-i18n="feat6_title">跨平台</div>
+        <p class="feature-desc" data-i18n="feat6_desc">iOS 与 Android 双端同步开发，界面体验保持高度一致。</p>
       </div>
     </div>
   </div>
@@ -118,18 +109,19 @@
 
 <section class="section" id="screenshots">
   <div class="container">
-    <div class="section-label lang-zh">截图预览 · Android</div>
-    <div class="section-label lang-en">Screenshots · Android</div>
+    <div class="section-label" data-i18n="ss_label">截图预览</div>
     <div class="screenshots-row">
       <div class="screenshot-item">
-        <img src="../img/screenshot_newplan.png" alt="新建计划" loading="lazy" />
-        <span class="screenshot-caption lang-zh">新建计划</span>
-        <span class="screenshot-caption lang-en">Create Plan</span>
+        <img data-screenshot="screenshot_list.png" src="/img/screenshots/zh-CN/screenshot_list.png" alt="Plan List" loading="lazy" />
+        <span class="screenshot-caption" data-i18n="ss_cap_list">计划列表</span>
       </div>
       <div class="screenshot-item">
-        <img src="../img/screenshot_ring.png" alt="环形视图" loading="lazy" />
-        <span class="screenshot-caption lang-zh">环形视图 · 运行中</span>
-        <span class="screenshot-caption lang-en">Ring View · Running</span>
+        <img data-screenshot="screenshot_newplan.png" src="/img/screenshots/zh-CN/screenshot_newplan.png" alt="New Plan" loading="lazy" />
+        <span class="screenshot-caption" data-i18n="ss_cap_newplan">新建计划</span>
+      </div>
+      <div class="screenshot-item">
+        <img data-screenshot="screenshot_detail.png" src="/img/screenshots/zh-CN/screenshot_detail.png" alt="Running Detail" loading="lazy" />
+        <span class="screenshot-caption" data-i18n="ss_cap_detail">运行详情</span>
       </div>
     </div>
   </div>
@@ -139,15 +131,11 @@
 
 <section class="section">
   <div class="container" style="max-width:640px;">
-    <div class="section-label lang-zh">法律与隐私</div>
-    <div class="section-label lang-en">Legal & Privacy</div>
-    <p style="font-size:14px;color:var(--text-2);margin-bottom:20px;" class="lang-zh">CatchTime 不收集任何个人身份信息，不集成第三方广告或追踪 SDK。你的数据完全属于你。</p>
-    <p style="font-size:14px;color:var(--text-2);margin-bottom:20px;" class="lang-en">CatchTime does not collect any personal identity information and does not integrate third-party advertising or tracking SDKs. Your data belongs entirely to you.</p>
+    <div class="section-label" data-i18n="legal_label">法律与隐私</div>
+    <p style="font-size:14px;color:var(--text-2);margin-bottom:20px;" data-i18n="legal_desc">CatchTime 不收集任何个人身份信息，不集成第三方广告或追踪 SDK。你的数据完全属于你。</p>
     <div style="display:flex;gap:14px;flex-wrap:wrap;">
-      <a href="privacy.html" style="font-size:14px;" class="lang-zh">查看隐私政策 →</a>
-      <a href="privacy.html" style="font-size:14px;" class="lang-en">Privacy Policy →</a>
-      <a href="terms.html" style="font-size:14px;" class="lang-zh">查看用户协议 →</a>
-      <a href="terms.html" style="font-size:14px;" class="lang-en">Terms of Service →</a>
+      <a href="privacy.html" style="font-size:14px;" data-i18n="legal_privacy">查看隐私政策 →</a>
+      <a href="terms.html" style="font-size:14px;" data-i18n="legal_terms">查看用户协议 →</a>
     </div>
   </div>
 </section>
@@ -156,17 +144,16 @@
   <div class="container footer-inner">
     <span class="footer-copy">© 2026 aidevs.cn</span>
     <div class="footer-links">
-      <a href="/" class="lang-zh">首页</a>
-      <a href="/" class="lang-en">Home</a>
-      <a href="privacy.html" class="lang-zh">隐私政策</a>
-      <a href="privacy.html" class="lang-en">Privacy</a>
-      <a href="terms.html" class="lang-zh">用户协议</a>
-      <a href="terms.html" class="lang-en">Terms</a>
+      <a href="/" data-i18n="footer_home">首页</a>
+      <a href="privacy.html" data-i18n="footer_privacy">隐私政策</a>
+      <a href="terms.html" data-i18n="footer_terms">用户协议</a>
       <a href="mailto:ai-devs@outlook.com">ai-devs@outlook.com</a>
     </div>
   </div>
 </footer>
 
+<script src="/js/i18n.js"></script>
 <script src="/js/main.js"></script>
 </body>
 </html>
+

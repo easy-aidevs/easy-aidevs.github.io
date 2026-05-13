@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title lang="zh-CN">隐私政策 · CatchTime — aidevs</title>
-  <meta name="description" content="CatchTime Privacy Policy — 时间环隐私政策。本地优先，不收集个人身份信息。" />
+  <title>Privacy Policy · CatchTime — aidevs</title>
+  <meta name="description" content="CatchTime Privacy Policy — local-first, no personal data collected." />
   <meta name="robots" content="noindex" />
   <link rel="icon" href="/img/catchtime-icon.png" type="image/png" />
   <link rel="stylesheet" href="/css/style.css" />
@@ -15,117 +15,117 @@
   <div class="container nav-inner">
     <a class="nav-logo" href="/">ai<span class="logo-accent">devs</span></a>
     <ul class="nav-links">
-      <li><a href="/catchtime/" class="lang-zh">时间环</a><a href="/catchtime/" class="lang-en">CatchTime</a></li>
-      <li><a href="terms.html" class="lang-zh">用户协议</a><a href="terms.html" class="lang-en">Terms</a></li>
+      <li><a href="/catchtime/" data-i18n="back_app">返回 CatchTime</a></li>
+      <li><a href="terms.html" data-i18n="nav_terms">用户协议</a></li>
     </ul>
     <div class="nav-actions">
-      <button class="btn-lang" id="btnLang" aria-label="Toggle language">EN</button>
+      <div class="lang-selector">
+        <button class="btn-lang" id="btnLang" aria-label="Language">简体中文</button>
+        <div class="lang-dropdown" id="langDropdown">
+          <button data-lang="zh-CN">简体中文</button>
+          <button data-lang="zh-TW">繁體中文</button>
+          <button data-lang="en">English</button>
+          <button data-lang="ja">日本語</button>
+          <button data-lang="ko">한국어</button>
+          <button data-lang="fr">Français</button>
+          <button data-lang="de">Deutsch</button>
+          <button data-lang="es">Español</button>
+          <button data-lang="pt-BR">Português</button>
+        </div>
+      </div>
       <button class="btn-theme" id="btnTheme" aria-label="Toggle theme">☀</button>
     </div>
   </div>
 </nav>
 <div class="policy-wrap">
-  <a class="back-link" href="/catchtime/">← <span class="lang-zh">返回 CatchTime</span><span class="lang-en">Back to CatchTime</span></a>
-  <h1 class="lang-zh">隐私政策</h1>
-  <h1 class="lang-en">Privacy Policy</h1>
+  <a class="back-link" href="/catchtime/">← <span data-i18n="back_app">返回 CatchTime</span></a>
+  <h1 data-i18n="priv_title">隐私政策</h1>
   <div class="policy-meta">
-    <span class="lang-zh">适用应用：CatchTime（时间环）</span><span class="lang-en">App: CatchTime</span>
+    <span data-i18n="priv_meta_app">适用应用：CatchTime（时间环）</span>
     <span>·</span>
-    <span class="lang-zh">生效日期：2026年5月12日</span><span class="lang-en">Effective: May 12, 2026</span>
+    <span data-i18n="priv_meta_date">生效日期：2026年5月12日</span>
     <span>·</span>
-    <a href="terms.html" class="lang-zh">用户协议</a><a href="terms.html" class="lang-en">Terms of Service</a>
+    <a href="terms.html" data-i18n="priv_meta_terms">用户协议</a>
   </div>
   <div class="policy-toc">
-    <h2 class="lang-zh">目录</h2><h2 class="lang-en">Contents</h2>
+    <h2 data-i18n="priv_toc">目录</h2>
     <ol>
-      <li><a href="#data-collection" class="lang-zh">数据收集</a><a href="#data-collection" class="lang-en">Data Collection</a></li>
-      <li><a href="#data-usage" class="lang-zh">数据用途</a><a href="#data-usage" class="lang-en">Data Usage</a></li>
-      <li><a href="#data-storage" class="lang-zh">数据存储</a><a href="#data-storage" class="lang-en">Data Storage</a></li>
-      <li><a href="#permissions" class="lang-zh">权限使用说明</a><a href="#permissions" class="lang-en">Permissions</a></li>
-      <li><a href="#third-party" class="lang-zh">第三方 SDK</a><a href="#third-party" class="lang-en">Third-Party SDKs</a></li>
-      <li><a href="#children" class="lang-zh">儿童隐私</a><a href="#children" class="lang-en">Children's Privacy</a></li>
-      <li><a href="#changes" class="lang-zh">政策更新</a><a href="#changes" class="lang-en">Policy Updates</a></li>
-      <li><a href="#contact" class="lang-zh">联系方式</a><a href="#contact" class="lang-en">Contact</a></li>
+      <li><a href="#s1" data-i18n="priv_toc1">数据收集</a></li>
+      <li><a href="#s2" data-i18n="priv_toc2">数据用途</a></li>
+      <li><a href="#s3" data-i18n="priv_toc3">数据存储</a></li>
+      <li><a href="#s4" data-i18n="priv_toc4">权限使用说明</a></li>
+      <li><a href="#s5" data-i18n="priv_toc5">第三方 SDK</a></li>
+      <li><a href="#s6" data-i18n="priv_toc6">儿童隐私</a></li>
+      <li><a href="#s7" data-i18n="priv_toc7">政策更新</a></li>
+      <li><a href="#s8" data-i18n="priv_toc8">联系方式</a></li>
     </ol>
   </div>
-  <div class="policy-section" id="data-collection">
-    <h2 class="lang-zh">1. 数据收集</h2><h2 class="lang-en">1. Data Collection</h2>
+
+  <div class="policy-section" id="s1">
+    <h2 data-i18n="priv_s1_h">1. 数据收集</h2>
+    <p data-i18n="priv_s1_p">时间环仅在本地存储你创建的任务、时间记录和专注数据。我们不收集你的个人身份信息，不上传任何行为数据到服务器。崩溃日志仅在你明确同意后才会发送。</p>
+  </div>
+
+  <div class="policy-section" id="s2">
+    <h2 data-i18n="priv_s2_h">2. 数据用途</h2>
+    <p data-i18n="priv_s2_p">所有数据仅用于在本设备上为你提供时间管理功能。我们不会将数据用于广告、画像或第三方目的。</p>
+  </div>
+
+  <div class="policy-section" id="s3">
+    <h2 data-i18n="priv_s3_h">3. 数据存储</h2>
+    <p data-i18n="priv_s3_p">数据存储在设备本地数据库中（SQLite）。如你开启 iCloud 同步（iOS），数据将通过 Apple CloudKit 加密传输并存储于你的个人 iCloud 账户，我们无法访问。</p>
+  </div>
+
+  <div class="policy-section" id="s4">
+    <h2 data-i18n="priv_s4_h">4. 权限使用说明</h2>
     <div class="policy-item">
-      <p class="lang-zh">时间环仅在本地存储你创建的任务、时间记录和专注数据。我们不收集你的个人身份信息，不上传任何行为数据到服务器。崩溃日志仅在你明确同意后才会发送。</p>
-      <p class="lang-en">CatchTime stores your tasks, time records, and focus data locally only. We do not collect personal identity information or upload any behavioral data to servers. Crash logs are only sent with your explicit consent.</p>
+      <h3 data-i18n="priv_s4_p1h">本地通知</h3>
+      <p data-i18n="priv_s4_p1">用于在任务时间节点提醒你切换或完成任务，不用于营销推送。</p>
+    </div>
+    <div class="policy-item">
+      <h3 data-i18n="priv_s4_p2h">后台运行（Android）</h3>
+      <p data-i18n="priv_s4_p2">用于在屏幕关闭时保持计时器运行，不收集任何数据。</p>
+    </div>
+    <div class="policy-item">
+      <h3 data-i18n="priv_s4_p3h">音频播放（iOS）</h3>
+      <p data-i18n="priv_s4_p3">用于在后台保持计时器运行（静默音频），不录音。</p>
     </div>
   </div>
-  <div class="policy-section" id="data-usage">
-    <h2 class="lang-zh">2. 数据用途</h2><h2 class="lang-en">2. Data Usage</h2>
-    <div class="policy-item">
-      <p class="lang-zh">所有数据仅用于在本设备上为你提供时间管理功能。我们不会将数据用于广告、画像或第三方目的。</p>
-      <p class="lang-en">All data is used solely to provide time management features on your device. We do not use data for advertising, profiling, or third-party purposes.</p>
-    </div>
+
+  <div class="policy-section" id="s5">
+    <h2 data-i18n="priv_s5_h">5. 第三方 SDK</h2>
+    <p data-i18n="priv_s5_p">当前版本不集成任何第三方广告、统计或追踪 SDK。如未来版本引入第三方服务，将在此处明确列出并更新本隐私政策。</p>
   </div>
-  <div class="policy-section" id="data-storage">
-    <h2 class="lang-zh">3. 数据存储</h2><h2 class="lang-en">3. Data Storage</h2>
-    <div class="policy-item">
-      <p class="lang-zh">数据存储在设备本地数据库中（SQLite）。如你开启 iCloud 同步（iOS），数据将通过 Apple CloudKit 加密传输并存储于你的个人 iCloud 账户，我们无法访问。</p>
-      <p class="lang-en">Data is stored in the local device database (SQLite). If you enable iCloud sync (iOS), data is encrypted via Apple CloudKit and stored in your personal iCloud account, which we cannot access.</p>
-    </div>
+
+  <div class="policy-section" id="s6">
+    <h2 data-i18n="priv_s6_h">6. 儿童隐私</h2>
+    <p data-i18n="priv_s6_p">本应用不面向 13 岁以下儿童，不会故意收集儿童个人信息。如果你认为我们误收集了儿童数据，请立即联系我们删除。</p>
   </div>
-  <div class="policy-section" id="permissions">
-    <h2 class="lang-zh">4. 权限使用说明</h2><h2 class="lang-en">4. Permission Usage</h2>
-    <div class="policy-item">
-      <h3 class="lang-zh">本地通知</h3><h3 class="lang-en">Local Notifications</h3>
-      <p class="lang-zh">用于在任务时间节点提醒你切换或完成任务，不用于营销推送。</p>
-      <p class="lang-en">Used to remind you to switch or complete tasks at scheduled times. Not used for marketing.</p>
-    </div>
-    <div class="policy-item">
-      <h3 class="lang-zh">后台运行（Android）</h3><h3 class="lang-en">Background Execution (Android)</h3>
-      <p class="lang-zh">用于在屏幕关闭时保持计时器运行，不收集任何数据。</p>
-      <p class="lang-en">Used to keep the timer running when the screen is off. No data is collected.</p>
-    </div>
-    <div class="policy-item">
-      <h3 class="lang-zh">音频播放（iOS）</h3><h3 class="lang-en">Audio Playback (iOS)</h3>
-      <p class="lang-zh">用于在后台保持计时器运行（静默音频），不录音。</p>
-      <p class="lang-en">Used to keep the timer running in the background via silent audio. No recording.</p>
-    </div>
+
+  <div class="policy-section" id="s7">
+    <h2 data-i18n="priv_s7_h">7. 政策更新</h2>
+    <p data-i18n="priv_s7_p">当我们对本政策进行实质性修改时，将通过 App 内通知或本页面顶部的更新日期告知你。继续使用即视为同意更新后的政策。</p>
   </div>
-  <div class="policy-section" id="third-party">
-    <h2 class="lang-zh">5. 第三方 SDK</h2><h2 class="lang-en">5. Third-Party SDKs</h2>
-    <div class="policy-item">
-      <p class="lang-zh">当前版本不集成任何第三方广告、统计或追踪 SDK。如未来版本引入第三方服务，将在此处明确列出并更新本隐私政策。</p>
-      <p class="lang-en">The current version does not integrate any third-party advertising, analytics, or tracking SDKs. If future versions introduce third-party services, they will be explicitly listed here with an updated privacy policy.</p>
-    </div>
-  </div>
-  <div class="policy-section" id="children">
-    <h2 class="lang-zh">6. 儿童隐私</h2><h2 class="lang-en">6. Children's Privacy</h2>
-    <div class="policy-item">
-      <p class="lang-zh">本应用不面向 13 岁以下儿童，不会故意收集儿童个人信息。如果你认为我们误收集了儿童数据，请立即联系我们删除。</p>
-      <p class="lang-en">This app is not directed to children under 13 and does not knowingly collect personal information from children. If you believe we have inadvertently collected such data, please contact us immediately for deletion.</p>
-    </div>
-  </div>
-  <div class="policy-section" id="changes">
-    <h2 class="lang-zh">7. 政策更新</h2><h2 class="lang-en">7. Policy Updates</h2>
-    <div class="policy-item">
-      <p class="lang-zh">当我们对本政策进行实质性修改时，将通过 App 内通知或本页面顶部的更新日期告知你。继续使用即视为同意更新后的政策。</p>
-      <p class="lang-en">When we make material changes to this policy, we will notify you via an in-app notice or by updating the effective date at the top of this page. Continued use of the app constitutes acceptance of the updated policy.</p>
-    </div>
-  </div>
-  <div class="policy-section" id="contact">
-    <h2 class="lang-zh">8. 联系方式</h2><h2 class="lang-en">8. Contact</h2>
-    <div class="policy-item">
-      <p class="lang-zh">如有隐私相关问题或数据删除请求，请发送邮件至：<br><a href="mailto:ai-devs@outlook.com">ai-devs@outlook.com</a></p>
-      <p class="lang-en">For privacy questions or data deletion requests, please email:<br><a href="mailto:ai-devs@outlook.com">ai-devs@outlook.com</a></p>
-    </div>
+
+  <div class="policy-section" id="s8">
+    <h2 data-i18n="priv_s8_h">8. 联系方式</h2>
+    <p><span data-i18n="priv_s8_p">如有隐私相关问题或数据删除请求，请发送邮件至：</span> <a href="mailto:ai-devs@outlook.com">ai-devs@outlook.com</a></p>
   </div>
 </div>
+
 <footer>
   <div class="container footer-inner">
     <span class="footer-copy">© 2026 aidevs.cn</span>
     <div class="footer-links">
-      <a href="/catchtime/" class="lang-zh">时间环</a><a href="/catchtime/" class="lang-en">CatchTime</a>
-      <a href="terms.html" class="lang-zh">用户协议</a><a href="terms.html" class="lang-en">Terms</a>
+      <a href="/" data-i18n="footer_home">首页</a>
+      <a href="/catchtime/" data-i18n="back_app">CatchTime</a>
+      <a href="terms.html" data-i18n="footer_terms">用户协议</a>
       <a href="mailto:ai-devs@outlook.com">ai-devs@outlook.com</a>
     </div>
   </div>
 </footer>
+
+<script src="/js/i18n.js"></script>
 <script src="/js/main.js"></script>
 </body>
 </html>
