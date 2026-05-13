@@ -35,8 +35,38 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // Platform tabs (iOS / Android)
+  var currentPlatform = localStorage.getItem('platform') || 'ios';
+  initPlatformTabs(currentPlatform);
+
   updateThemeBtn();
 });
+
+// ── Platform tab switching ────────────────────────────────────────────────────
+function initPlatformTabs(platform) {
+  var tabs = document.querySelectorAll('.platform-tab');
+  if (!tabs.length) return;
+  tabs.forEach(function (tab) {
+    tab.classList.toggle('active', tab.dataset.platform === platform);
+    tab.addEventListener('click', function () {
+      var p = tab.dataset.platform;
+      localStorage.setItem('platform', p);
+      tabs.forEach(function (t) { t.classList.toggle('active', t.dataset.platform === p); });
+      updateScreenshots(getLang(), p);
+    });
+  });
+  updateScreenshots(getLang(), platform);
+}
+
+function updateScreenshots(lang, platform) {
+  var folder = SS_FOLDER[lang] || 'en-US';
+  var prefix = platform === 'ios'
+    ? '/img/screenshots/ios/' + folder + '/'
+    : '/img/screenshots/' + folder + '/';
+  document.querySelectorAll('[data-screenshot]').forEach(function (img) {
+    img.src = prefix + img.dataset.screenshot;
+  });
+}
 
 function setTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);

@@ -51,6 +51,8 @@ const T = {
     feat6_title: '跨平台',
     feat6_desc:  'iOS 与 Android 双端同步开发，界面体验保持高度一致。',
     ss_label:    '截图预览',
+    ss_tab_ios:     '🍎 iOS',
+    ss_tab_android: '🤖 Android',
     ss_cap_list:    '计划列表',
     ss_cap_newplan: '新建计划',
     ss_cap_detail:  '运行详情',
@@ -159,6 +161,8 @@ const T = {
     feat6_title: '跨平台',
     feat6_desc:  'iOS 與 Android 雙端同步開發，介面體驗保持高度一致。',
     ss_label:    '截圖預覽',
+    ss_tab_ios:     '🍎 iOS',
+    ss_tab_android: '🤖 Android',
     ss_cap_list:    '計畫清單',
     ss_cap_newplan: '新建計畫',
     ss_cap_detail:  '執行詳情',
@@ -265,6 +269,8 @@ const T = {
     feat6_title: 'Cross-Platform',
     feat6_desc:  'Built for both iOS and Android with a consistent experience across platforms.',
     ss_label:    'Screenshots',
+    ss_tab_ios:     '🍎 iOS',
+    ss_tab_android: '🤖 Android',
     ss_cap_list:    'Plan List',
     ss_cap_newplan: 'New Plan',
     ss_cap_detail:  'Running Detail',
@@ -371,6 +377,8 @@ const T = {
     feat6_title: 'クロスプラットフォーム',
     feat6_desc:  'iOSとAndroidの両方で一貫した体験を提供します。',
     ss_label:    'スクリーンショット',
+    ss_tab_ios:     '🍎 iOS',
+    ss_tab_android: '🤖 Android',
     ss_cap_list:    'プラン一覧',
     ss_cap_newplan: '新しいプラン',
     ss_cap_detail:  '実行詳細',
@@ -477,6 +485,8 @@ const T = {
     feat6_title: '크로스 플랫폼',
     feat6_desc:  'iOS와 Android 모두를 위해 제작되어 일관된 경험을 제공합니다.',
     ss_label:    '스크린샷',
+    ss_tab_ios:     '🍎 iOS',
+    ss_tab_android: '🤖 Android',
     ss_cap_list:    '계획 목록',
     ss_cap_newplan: '새 계획',
     ss_cap_detail:  '실행 상세',
@@ -583,6 +593,8 @@ const T = {
     feat6_title: 'Multiplateforme',
     feat6_desc:  'Conçu pour iOS et Android avec une expérience cohérente sur les deux plateformes.',
     ss_label:    "Captures d'écran",
+    ss_tab_ios:     '🍎 iOS',
+    ss_tab_android: '🤖 Android',
     ss_cap_list:    'Liste des plans',
     ss_cap_newplan: 'Nouveau plan',
     ss_cap_detail:  'Détails en cours',
@@ -689,6 +701,8 @@ const T = {
     feat6_title: 'Plattformübergreifend',
     feat6_desc:  'Für iOS und Android entwickelt, mit einer konsistenten Erfahrung auf beiden Plattformen.',
     ss_label:    'Screenshots',
+    ss_tab_ios:     '🍎 iOS',
+    ss_tab_android: '🤖 Android',
     ss_cap_list:    'Planliste',
     ss_cap_newplan: 'Neuer Plan',
     ss_cap_detail:  'Laufende Details',
@@ -795,6 +809,8 @@ const T = {
     feat6_title: 'Multiplataforma',
     feat6_desc:  'Desarrollado para iOS y Android con una experiencia consistente en ambas plataformas.',
     ss_label:    'Capturas de pantalla',
+    ss_tab_ios:     '🍎 iOS',
+    ss_tab_android: '🤖 Android',
     ss_cap_list:    'Lista de planes',
     ss_cap_newplan: 'Nuevo plan',
     ss_cap_detail:  'Detalles en ejecución',
@@ -901,6 +917,8 @@ const T = {
     feat6_title: 'Multiplataforma',
     feat6_desc:  'Desenvolvido para iOS e Android com uma experiência consistente em ambas as plataformas.',
     ss_label:    'Capturas de tela',
+    ss_tab_ios:     '🍎 iOS',
+    ss_tab_android: '🤖 Android',
     ss_cap_list:    'Lista de planos',
     ss_cap_newplan: 'Novo plano',
     ss_cap_detail:  'Detalhes em execução',
@@ -1014,11 +1032,16 @@ function applyLang(lang) {
     const key = el.dataset.i18nHtml;
     if (t[key] !== undefined) el.innerHTML = t[key];
   });
-  // update screenshots
-  const folder = SS_FOLDER[lang] || 'en-US';
-  document.querySelectorAll('[data-screenshot]').forEach(img => {
-    img.src = '/img/screenshots/' + folder + '/' + img.dataset.screenshot;
-  });
+  // update screenshots — respect current platform if main.js is loaded
+  if (typeof updateScreenshots === 'function') {
+    const platform = localStorage.getItem('platform') || 'ios';
+    updateScreenshots(lang, platform);
+  } else {
+    const folder = SS_FOLDER[lang] || 'en-US';
+    document.querySelectorAll('[data-screenshot]').forEach(img => {
+      img.src = '/img/screenshots/' + folder + '/' + img.dataset.screenshot;
+    });
+  }
   // update html lang & button
   document.documentElement.lang = lang;
   const btn = document.getElementById('btnLang');

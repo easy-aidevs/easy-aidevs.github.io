@@ -453,12 +453,43 @@ nav {
 .feature-title { font-size: 15px; font-weight: 600; margin-bottom: 5px; }
 .feature-desc { font-size: 13px; color: var(--text-2); line-height: 1.55; }
 
+/* Platform tabs */
+.platform-tabs {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.platform-tab {
+  padding: 7px 22px;
+  border-radius: 20px;
+  border: 1.5px solid var(--border);
+  background: transparent;
+  color: var(--text-2);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.platform-tab:hover {
+  background: var(--surface-2);
+  color: var(--text-1);
+}
+
+.platform-tab.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
 /* Screenshots gallery */
 .screenshots-row {
   display: flex;
   gap: 16px;
   justify-content: center;
-  margin-top: 32px;
+  margin-top: 24px;
   overflow-x: auto;
   padding-bottom: 8px;
 }
